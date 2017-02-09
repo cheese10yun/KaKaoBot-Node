@@ -22,7 +22,14 @@ Bot.choseMenu = (content, callback) => {
     switch (content) {
         case '교내식단':
             Bot.diet((err, result) => {
-                menu.message.text=result;
+                console.log(typeof result);
+                
+                console.log(result);
+                
+                console.log('===============');
+                console.log(JSON.stringify(result));
+                console.log('===============');
+                menu.message.text=JSON.stringify(result);
                 callback(err, menu);
             });
             break;
