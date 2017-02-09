@@ -17,34 +17,46 @@ router.get('/keyboard', (req, res) => {
 });
 
 router.post('/message', (req, res) => {
+    
+    // TODO content 값이 이상한 값이라면 ?.
+    // TODO 식단은 하루동안은 바뀌지 않기 떄문에 레디스에다가 케쉬해서 가져다 쓰자.
+    
+    
     const _obj = {
         user_key: req.body.user_key,
         type: req.body.type,
         content: req.body.content
     };
     
-    switch (_obj.content) {
-        case "교내식단":
-            Bot.diet((err, result)=>{
-                if(!err){
-                    res.json({
-                        message: {
-                            text: result
-                        }
-                    });
-                }else{
-                }
-            });
-            break;
-        case '':
-            break;
-        case '':
-            break;
-        default:
-            break;
-    }
+    Bot.choseMenu(_obj.content, (err, result) => {
+        if (!err) {
+            res.json({message: {text: result}});
+        } else {
+            res.json({message: {text: '문제가 생겼습니다.'}});
+        }
+    });
     
     
+    // switch (_obj.content) {
+    //     case "교내식단":
+    //         Bot.diet((err, result)=>{
+    //             if(!err){
+    //                 res.json({
+    //                     message: {
+    //                         text: result
+    //                     }
+    //                 });
+    //             }else{
+    //             }
+    //         });
+    //         break;
+    //     case '':
+    //         break;
+    //     case '':
+    //         break;
+    //     default:
+    //         break;
+    // }
     
     
 });
