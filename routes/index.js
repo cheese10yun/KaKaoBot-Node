@@ -11,24 +11,14 @@ router.get('/', function (req, res) {
 //TODO ""로 반드시 감싸야 하는지?
 router.get('/keyboard', (req, res) => {
     
-    // res.header('Content-Type', 'application/json; charset=utf-8');
-    
-    // res.json({
-    //     "type": "buttons",
-    //     "buttons": ["교내식단", "메뉴2", "메뉴3"]
-    // })
-    
     const menu ={
         type: 'buttons',
         buttons:["교내식단", "메뉴2", "메뉴3"]
     };
     
-    
     res.set({
         'content-type': 'application/json'
-    }).send(JSON.stringify(menu));
-    
-    
+    }).send(menu);
 });
 
 router.post('/message', (req, res) => {
@@ -49,6 +39,7 @@ router.post('/message', (req, res) => {
     Bot.choseMenu(_obj.content, (err, result) => {
         if (!err) {
             res.json({message: {text: result}});
+            
         } else {
             res.json({message: {text: '문제가 생겼습니다.'}});
         }
