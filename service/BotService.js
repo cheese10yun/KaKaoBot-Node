@@ -50,8 +50,11 @@ Bot.diet = (callback) => {
             let diet = null;
             
             $('.tbline31 tr').each(function () {
-                diet = $(this).find("td").eq(0).text();
+                diet = '----------아침---------';
+                diet +=$(this).find("td").eq(0).text();
+                diet +='----------점심---------';
                 diet += $(this).find("td").eq(1).text();
+                diet +='----------저녁---------';
                 diet += $(this).find("td").eq(2).text();
             });
             

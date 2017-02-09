@@ -37,7 +37,6 @@ router.post('/message', (req, res) => {
         if (!err) {
             console.log(result.message.text);
             
-            
             res.set({
                 'content-type': 'application/json'
             }).send(JSON.stringify(result));
