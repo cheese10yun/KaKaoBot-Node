@@ -12,10 +12,11 @@ const cheerio = require('cheerio');
      message: {
          text: null,
      },
-    type: 'buttons',
-    buttons: ["교내식단", "메뉴2", "메뉴3"]
+     keyboard: {
+         type: 'buttons',
+         buttons: ["교내식단", "메뉴2", "메뉴3"]
+     }
 };
-
 Bot.choseMenu = (content, callback) => {
     
     switch (content) {
