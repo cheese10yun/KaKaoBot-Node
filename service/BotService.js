@@ -13,7 +13,6 @@ Bot.choseMenu = (content, callback) => {
     
     switch (content) {
         case '교내식단':
-            console.log('여기는 교내식단');
             Bot.diet((err, result) => {
                 callback(err, result);
             });
@@ -24,6 +23,7 @@ Bot.choseMenu = (content, callback) => {
         case '':
             break;
         default:
+            callback(null, {message: {text: '선택하신 메뉴는 존재하지 않습니다.'}});
             break;
     }
 };
