@@ -57,7 +57,6 @@ router.post('/friend', (req, res) => {
 router.delete('/friend', (req, res) => {
     const
         user_key = req.body.user_key;
-    
     console.log(`${user_key}님이 쳇팅방을 차단했습니다.`);
     
     res.set({
