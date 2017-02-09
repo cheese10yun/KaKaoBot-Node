@@ -8,22 +8,32 @@ const url = 'http://dormi.mokpo.ac.kr/www/bbs/board.php?bo_table=food';
 const Bot = {};
 const cheerio = require('cheerio');
 
+ let menu = {
+     message: {
+         text: null,
+     },
+    type: 'buttons',
+    buttons: ["교내식단", "메뉴2", "메뉴3"]
+};
 
 Bot.choseMenu = (content, callback) => {
     
     switch (content) {
         case '교내식단':
             Bot.diet((err, result) => {
-                callback(err, result);
+                menu.message.text=result;
+                callback(err, menu);
             });
             break;
         case '메뉴2':
-            callback(null, {message: {text: '테스트 중입니다..'}});
+            menu.message.text='테스트 중입니다.';
+            callback(null, menu);
             break;
         case '':
             break;
         default:
-            callback(null, {message: {text: '선택하신 메뉴는 존재하지 않습니다.'}});
+            menu.message.text='선택하신 메뉴는 존재하지 않습니다.';
+            callback(null, menu);
             break;
     }
 };
@@ -48,10 +58,10 @@ Bot.diet = (callback) => {
             });
             
             
-            callback(null, {message: {text: diet}});
+            callback(null, diet);
             
         } else {
-            callback(err, {message: {text: '문제가 발생했습니다.'}});
+            callback(err, '다시 시도해주세요');
         }
     });
 };
