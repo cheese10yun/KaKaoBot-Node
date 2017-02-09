@@ -35,6 +35,9 @@ router.post('/message', (req, res) => {
     
     Bot.choseMenu(_obj.content, (err, result) => {
         if (!err) {
+            console.log(result.message.text);
+            
+            
             res.set({
                 'content-type': 'application/json'
             }).send(JSON.stringify(result));
