@@ -19,7 +19,7 @@ Bot.choseMenu = (content, callback) => {
             });
             break;
         case '메뉴2':
-            callback(null, '테스트중입니다.');
+            callback(null, {message: {text: '테스트 중입니다..'}});
             break;
         case '':
             break;
@@ -46,10 +46,12 @@ Bot.diet = (callback) => {
                 diet.lunch = $(this).find("td").eq(1).text();
                 diet.dinner = $(this).find("td").eq(2).text();
             });
-            callback(null, diet)
+            
+            
+            callback(null, {message: {text: diet}});
             
         } else {
-            callback(err, null)
+            callback(err, {message: {text: '문제가 발생했습니다.'}});
         }
     });
 };
