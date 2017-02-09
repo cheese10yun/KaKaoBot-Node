@@ -23,10 +23,6 @@ router.post('/message', (req, res) => {
         content: req.body.content
     };
     
-    
-    
-    let results = null;
-    
     switch (_obj.content) {
         case "교내식단":
             Bot.diet((err, result)=>{
