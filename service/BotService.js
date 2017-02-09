@@ -22,7 +22,6 @@ Bot.choseMenu = (content, callback) => {
     switch (content) {
         case '교내식단':
             Bot.diet((err, result) => {
-                
                 menu.message.text = result;
                 callback(err, menu);
             });
@@ -58,8 +57,6 @@ Bot.diet = (callback) => {
                 diet += $(this).find("td").eq(2).text();
             });
             
-            
-            // callback(null, JSON.stringify(diet));
             callback(null, diet);
             
         } else {

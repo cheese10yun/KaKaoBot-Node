@@ -46,7 +46,6 @@ router.post('/message', (req, res) => {
 router.post('/friend', (req, res) => {
     const
         user_key = req.body.user_key;
-    
     console.log(`${user_key}님이 쳇팅방에 참가했습니다.`);
     
     res.set({
