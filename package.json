@@ -7,12 +7,14 @@
   },
   "dependencies": {
     "body-parser": "~1.15.2",
+    "cheerio": "^0.22.0",
     "cookie-parser": "~1.4.3",
     "debug": "~2.2.0",
     "express": "~4.14.0",
     "hbs": "~4.0.1",
     "morgan": "~1.7.0",
     "node-sass-middleware": "0.9.8",
+    "request": "^2.79.0",
     "serve-favicon": "~2.3.0"
   }
 }
