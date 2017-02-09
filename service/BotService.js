@@ -53,7 +53,7 @@ Bot.diet = (callback) => {
                 diet = '----------아침---------\r\n';
                 diet +=$(this).find("td").eq(0).text() +'\r\n';
                 diet +='----------점심---------\r\n';
-                diet += $(this).find("td").eq(1).text()+'\r\n';;
+                diet += $(this).find("td").eq(1).text()+'\r\n';
                 diet +='----------저녁---------\r\n';
                 diet += $(this).find("td").eq(2).text();
             });
