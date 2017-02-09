@@ -29,6 +29,9 @@ router.post('/message', (req, res) => {
         content: req.body.content
     };
     
+    
+    console.log(_obj);
+    
     Bot.choseMenu(_obj.content, (err, result) => {
         if (!err) {
             res.json({message: {text: result}});
@@ -41,17 +44,21 @@ router.post('/message', (req, res) => {
 router.post('/friend', (req, res)=>{
     const user_key = req.body.user_key;
     
+    res.json({message: {text: '환영 합니다.'}});
+    
     
 });
 
 router.delete('/friend', (req, res)=>{
     const user_key = req.body.user_key;
     
+    res.json({message: {text: '가지마 ㅠㅠ'}});
 });
 
 router.delete('/chat_room/:user_key', (req, res)=>{
-    const user_key = req.params.user_key
+    const user_key = req.params.user_key;
     
+    res.json({message: {text: '가지마...'}});
 });
 
 
