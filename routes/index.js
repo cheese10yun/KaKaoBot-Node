@@ -10,6 +10,7 @@ router.get('/', function (req, res) {
 
 //TODO ""로 반드시 감싸야 하는지?
 router.get('/keyboard', (req, res) => {
+    
     res.json({
         "type": "buttons",
         "buttons": ["교내식단", "메뉴2", "메뉴3"]
@@ -35,29 +36,21 @@ router.post('/message', (req, res) => {
             res.json({message: {text: '문제가 생겼습니다.'}});
         }
     });
+});
+
+router.post('/friend', (req, res)=>{
+    const user_key = req.body.user_key;
     
     
-    // switch (_obj.content) {
-    //     case "교내식단":
-    //         Bot.diet((err, result)=>{
-    //             if(!err){
-    //                 res.json({
-    //                     message: {
-    //                         text: result
-    //                     }
-    //                 });
-    //             }else{
-    //             }
-    //         });
-    //         break;
-    //     case '':
-    //         break;
-    //     case '':
-    //         break;
-    //     default:
-    //         break;
-    // }
+});
+
+router.delete('/friend', (req, res)=>{
+    const user_key = req.body.user_key;
     
+});
+
+router.delete('/chat_room/:user_key', (req, res)=>{
+    const user_key = req.params.user_key
     
 });
 
