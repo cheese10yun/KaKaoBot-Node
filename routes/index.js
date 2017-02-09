@@ -34,6 +34,7 @@ router.post('/message', (req, res) => {
     };
     
     
+    
     console.log(_obj);
     
     Bot.choseMenu(_obj.content, (err, result) => {
