@@ -6,6 +6,7 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
+    "async": "^2.1.4",
     "body-parser": "~1.15.2",
     "cheerio": "^0.22.0",
     "cookie-parser": "~1.4.3",
@@ -14,6 +15,7 @@
     "hbs": "~4.0.1",
     "morgan": "~1.7.0",
     "node-sass-middleware": "0.9.8",
+    "redis": "^2.6.5",
     "request": "^2.79.0",
     "serve-favicon": "~2.3.0"
   }

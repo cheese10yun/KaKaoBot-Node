@@ -49,3 +49,4 @@ jspm_packages
 .yarn-integrity
 
 .idea/
+/secret/secret.js

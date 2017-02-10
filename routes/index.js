@@ -3,14 +3,15 @@ const
     router = express.Router(),
     Bot = require('../service/BotService');
 
-/* GET home page. */
+
+require('../databases/redis')(router); // redis
+
 router.get('/', function (req, res) {
     res.render('index', {title: 'Express'});
 });
 
 //TODO ""로 반드시 감싸야 하는지?
 router.get('/keyboard', (req, res) => {
-    
     const menu = {
         type: 'buttons',
         buttons: ["교내식단", "메뉴2", "메뉴3"]
@@ -30,7 +31,7 @@ router.post('/message', (req, res) => {
         content: req.body.content
     };
     
-    Bot.choseMenu(_obj.content, (err, result) => {
+    Bot.choseMenu(req, _obj.content, (err, result) => {
         if (!err) {
             res.set({
                 'content-type': 'application/json'
