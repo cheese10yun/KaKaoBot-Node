@@ -45,11 +45,11 @@ Bot.choseMenu = (content, callback) => {
                     photo: {
                         url: "http://i.imgur.com/VyzToYw.jpg",
                         width: 640,
-                        heigh: 480
+                        height: 480
                     },
                     message_button: {
-                        "label": "맥북받기 쿠폰받기",
-                        "url": "https://cheese10yun.github.io/"
+                        label: "맥북받기 쿠폰받기",
+                        url: "https://cheese10yun.github.io/"
                     }
                 },
                 keyboard: {
