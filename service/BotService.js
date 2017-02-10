@@ -4,77 +4,32 @@
 
 const request = require('request');
 const url = 'http://dormi.mokpo.ac.kr/www/bbs/board.php?bo_table=food';
-
 const Bot = {};
 const cheerio = require('cheerio');
+const message = require('../service/message');
 
-let menu = {
-    message: {
-        text: null,
-    },
-    keyboard: {
-        type: 'buttons',
-        buttons: ["교내식단", "메뉴2", "메뉴3"]
-    }
-};
+// TODO 리턴 메시지들은 관리할것인가 아래 처럼 ? 아니면 별도로 구성 ??
 Bot.choseMenu = (content, callback) => {
     
     switch (content) {
         case '교내식단':
-            let menu1= menu;
-            
-            
-            
             Bot.diet((err, result) => {
-                // menu.message.text = result;
-                menu1.message.text =result;
-                callback(err, menu1);
+                message.bases.message.text = result;
+                callback(err, message.bases);
             });
             break;
         case '메뉴2':
-            
-            let menu2 = menu;
-            
-    
-            menu2.message.photo ={
-                url: "http://i.imgur.com/VyzToYw.jpg",
-                width: 640,
-                height: 480
-            };
-            menu2.message.message_button ={
-                label: "맥북받기 쿠폰받기",
-                url: "https://cheese10yun.github.io/"
-            };
-            menu2.message.text = '테스트 중입니다.';
-            
-            
-            // let test = {
-            //     message: {
-            //         text: "테스트 중입니다.",
-            //         photo: {
-            //             url: "http://i.imgur.com/VyzToYw.jpg",
-            //             width: 640,
-            //             height: 480
-            //         },
-            //         message_button: {
-            //             label: "맥북받기 쿠폰받기",
-            //             url: "https://cheese10yun.github.io/"
-            //         }
-            //     },
-            //     keyboard: {
-            //         type: "buttons",
-            //         buttons: ["교내식단", "메뉴2", "메뉴3"]
-            //     }
-            // };
-            
-            // console.log(test);
-            callback(null, menu2);
+            message.photo.message.text = '테스트중';
+            message.photo.message.photo.url = 'http://i.imgur.com/VyzToYw.jpg';
+            message.photo.message.message_button.label = '맥북 쿠폰받기';
+            message.photo.message.message_button.url = 'https://cheese10yun.github.io/';
+            callback(null, message.photo);
             break;
         case '':
             break;
         default:
-            menu.message.text = '선택하신 메뉴는 존재하지 않습니다.';
-            callback(null, menu);
+            message.bases.text = '입력이 제대로 입력해주세요';
+            callback(null, message.bases);
             break;
     }
 };
