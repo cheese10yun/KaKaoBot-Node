@@ -27,6 +27,15 @@ Bot.choseMenu = (content, callback) => {
             });
             break;
         case '메뉴2':
+            menu.message.photo ={
+                url: "http://i.imgur.com/VyzToYw.jpg",
+                width: 640,
+                heigh: 480
+            };
+            menu.message.message_button ={
+                label: "맥북받기 쿠폰받기",
+                url: "https://cheese10yun.github.io/"
+            };
             menu.message.text = '테스트 중입니다.';
             callback(null, menu);
             break;
