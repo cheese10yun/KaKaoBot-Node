@@ -28,16 +28,21 @@ Bot.choseMenu = (content, callback) => {
             break;
         case '메뉴2':
             
-            menu.message.photo ={
+            let menu2 = menu;
+            
+            menu2
+    
+    
+            menu2.message.photo ={
                 url: "http://i.imgur.com/VyzToYw.jpg",
                 width: 640,
                 height: 480
             };
-            menu.message.message_button ={
+            menu2.message.message_button ={
                 label: "맥북받기 쿠폰받기",
                 url: "https://cheese10yun.github.io/"
             };
-            menu.message.text = '테스트 중입니다.';
+            menu2.message.text = '테스트 중입니다.';
             
             
             // let test = {
@@ -60,7 +65,7 @@ Bot.choseMenu = (content, callback) => {
             // };
             
             // console.log(test);
-            callback(null, menu);
+            callback(null, menu2);
             break;
         case '':
             break;
