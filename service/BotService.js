@@ -33,7 +33,9 @@ Bot.choseMenu = (content, callback) => {
             
             callback(null, msg_photo);
             break;
-        case '':
+        case '메뉴3':
+            msg_base.base.text = '테스트중입니다.';
+            callback(null, msg_base);
             break;
         default:
             msg_base.base.text = '입력이 제대로 입력해주세요';
