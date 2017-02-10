@@ -18,7 +18,7 @@ message.bases={
 
 message.photo = {
     message: {
-        text: '귀하의 차량이 성공적으로 등록되었습니다. 축하합니다!',
+        text: null,
         photo: {
             url: null,
             width: 640,
