@@ -27,39 +27,40 @@ Bot.choseMenu = (content, callback) => {
             });
             break;
         case '메뉴2':
-            // menu.message.photo ={
-            //     url: "http://i.imgur.com/VyzToYw.jpg",
-            //     width: 640,
-            //     heigh: 480
-            // };
-            // menu.message.message_button ={
-            //     label: "맥북받기 쿠폰받기",
-            //     url: "https://cheese10yun.github.io/"
-            // };
-            // menu.message.text = '테스트 중입니다.';
             
-            
-            let test = {
-                message: {
-                    text: "테스트 중입니다.",
-                    photo: {
-                        url: "http://i.imgur.com/VyzToYw.jpg",
-                        width: 640,
-                        height: 480
-                    },
-                    message_button: {
-                        label: "맥북받기 쿠폰받기",
-                        url: "https://cheese10yun.github.io/"
-                    }
-                },
-                keyboard: {
-                    type: "buttons",
-                    buttons: ["교내식단", "메뉴2", "메뉴3"]
-                }
+            menu.message.photo ={
+                url: "http://i.imgur.com/VyzToYw.jpg",
+                width: 640,
+                height: 480
             };
+            menu.message.message_button ={
+                label: "맥북받기 쿠폰받기",
+                url: "https://cheese10yun.github.io/"
+            };
+            menu.message.text = '테스트 중입니다.';
             
-            console.log(test);
-            callback(null, test);
+            
+            // let test = {
+            //     message: {
+            //         text: "테스트 중입니다.",
+            //         photo: {
+            //             url: "http://i.imgur.com/VyzToYw.jpg",
+            //             width: 640,
+            //             height: 480
+            //         },
+            //         message_button: {
+            //             label: "맥북받기 쿠폰받기",
+            //             url: "https://cheese10yun.github.io/"
+            //         }
+            //     },
+            //     keyboard: {
+            //         type: "buttons",
+            //         buttons: ["교내식단", "메뉴2", "메뉴3"]
+            //     }
+            // };
+            
+            // console.log(test);
+            callback(null, menu);
             break;
         case '':
             break;
