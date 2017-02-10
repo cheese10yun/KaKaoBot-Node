@@ -22,13 +22,9 @@ Bot.choseMenu = (content, callback) => {
             });
             break;
         case '메뉴2':
-            
-            
-            
-            callback(null, message.photo('테스트중', 'http://i.imgur.com/VyzToYw.jpg', '맥북 쿠폰받기', 'https://cheese10yun.github.io/'););
+            callback(null, message.photo('테스트중', 'http://i.imgur.com/VyzToYw.jpg', '맥북 쿠폰받기', 'https://cheese10yun.github.io/'));
             break;
         case '메뉴3':
-            
             callback(null, message('메뉴3 테스트중'));
             break;
         default:
