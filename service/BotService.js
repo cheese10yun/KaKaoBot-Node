@@ -30,8 +30,6 @@ Bot.choseMenu = (content, callback) => {
             
             let menu2 = menu;
             
-            menu2
-    
     
             menu2.message.photo ={
                 url: "http://i.imgur.com/VyzToYw.jpg",
