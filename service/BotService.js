@@ -25,10 +25,10 @@ Bot.choseMenu = (content, callback) => {
             callback(null, message.photo('테스트중', 'http://i.imgur.com/VyzToYw.jpg', '맥북 쿠폰받기', 'https://cheese10yun.github.io/'));
             break;
         case '메뉴3':
-            callback(null, message('메뉴3 테스트중'));
+            callback(null, message.base('메뉴3 테스트중'));
             break;
         default:
-            callback(null, message('입력값이 올바르지 않습니다.'));
+            callback(null, message.base('입력값이 올바르지 않습니다.'));
             break;
     }
 };
