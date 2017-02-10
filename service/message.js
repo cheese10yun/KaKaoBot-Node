@@ -6,32 +6,37 @@ let
     buttons =['교내식단', '메뉴2', '메뉴3'],
     message = {};
 
-message.base={
-    message: {
-        text: null,
-    },
-    keyboard: {
-        type: 'buttons',
-        buttons: buttons
+
+message.base = (text)=>{
+    return {
+        message: {
+            text: text,
+        },
+        keyboard: {
+            type: 'buttons',
+            buttons: buttons
+        }
     }
 };
 
-message.photo = {
-    message: {
-        text: null,
-        photo: {
-            url: null,
-            width: 640,
-            height: 480
+message.photo = (text, url_photo, label, url_button)=>{
+    return{
+        message: {
+            text: text,
+            photo: {
+                url: url_photo,
+                width: 640,
+                height: 480
+            },
+            message_button: {
+                label: label,
+                url: url_button,
+            }
         },
-        message_button: {
-            label: null,
-            url: null,
+        keyboard: {
+            type: 'buttons',
+            buttons: buttons
         }
-    },
-    keyboard: {
-        type: 'buttons',
-        buttons: buttons
     }
 };
 

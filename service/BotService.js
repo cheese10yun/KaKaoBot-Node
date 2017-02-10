@@ -22,24 +22,17 @@ Bot.choseMenu = (content, callback) => {
             });
             break;
         case '메뉴2':
-            // message.photo.message.message_button.url = 'https://cheese10yun.github.io/';
-            // message.photo.message.message_button.label = '맥북 쿠폰받기';
-            // message.photo.message.photo.url = 'http://i.imgur.com/VyzToYw.jpg';
-            // message.photo.message.text = '테스트중';
-            msg_photo.message.text= '테스트중';
-            msg_photo.message.photo.url= 'http://i.imgur.com/VyzToYw.jpg';
-            msg_photo.message.message_button.label= '맥북 쿠폰받기';
-            msg_photo.message.message_button.url= 'https://cheese10yun.github.io/';
             
-            callback(null, msg_photo);
+            
+            
+            callback(null, message.photo('테스트중', 'http://i.imgur.com/VyzToYw.jpg', '맥북 쿠폰받기', 'https://cheese10yun.github.io/'););
             break;
         case '메뉴3':
-            msg_base.message.text = '테스트중입니다';
-            callback(null, msg_base);
+            
+            callback(null, message('메뉴3 테스트중'));
             break;
         default:
-            msg_base.base.text = '입력이 제대로 입력해주세요';
-            callback(null, msg_base);
+            callback(null, message('입력값이 올바르지 않습니다.'));
             break;
     }
 };
@@ -62,7 +55,8 @@ Bot.diet = (callback) => {
                 diet += $(this).find("td").eq(2).text();
             });
             
-            callback(null, diet);
+            
+            callback(null, message.base(diet));
             
         } else {
             callback(err, '다시 시도해주세요');
