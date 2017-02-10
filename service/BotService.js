@@ -39,7 +39,7 @@ Bot.choseMenu = (content, callback) => {
             // menu.message.text = '테스트 중입니다.';
             
             
-            const test = {
+            let test = {
                 "message": {
                     "text": "테스트 중입니다.",
                     "photo": {
