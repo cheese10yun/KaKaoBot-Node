@@ -38,7 +38,7 @@ Bot.diet = (req, callback) => {
     const tasks = [
         (callback) => {
             RedisDAO.getDiet(req.cache, redis_key_diet, (err, cached) => {
-                callback(err, cached);
+                callback(err, JSON.parse(cached));
             });
         },
         
