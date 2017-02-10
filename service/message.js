@@ -6,7 +6,7 @@ let
     buttons =['교내식단', '메뉴2', '메뉴3'],
     message = {};
 
-message.bases={
+message.base={
     message: {
         text: null,
     },

@@ -8,28 +8,36 @@ const Bot = {};
 const cheerio = require('cheerio');
 const message = require('../service/message');
 
+const msg_base = message.base;
+const msg_photo = message.photo;
+
 // TODO 리턴 메시지들은 관리할것인가 아래 처럼 ? 아니면 별도로 구성 ??
 Bot.choseMenu = (content, callback) => {
     
     switch (content) {
         case '교내식단':
             Bot.diet((err, result) => {
-                message.bases.message.text = result;
-                callback(err, message.bases);
+                msg_base.message.text = result;
+                callback(err, msg_base);
             });
             break;
         case '메뉴2':
-            message.photo.message.text = '테스트중';
-            message.photo.message.photo.url = 'http://i.imgur.com/VyzToYw.jpg';
-            message.photo.message.message_button.label = '맥북 쿠폰받기';
-            message.photo.message.message_button.url = 'https://cheese10yun.github.io/';
-            callback(null, message.photo);
+            // message.photo.message.message_button.url = 'https://cheese10yun.github.io/';
+            // message.photo.message.message_button.label = '맥북 쿠폰받기';
+            // message.photo.message.photo.url = 'http://i.imgur.com/VyzToYw.jpg';
+            // message.photo.message.text = '테스트중';
+            msg_photo.message.text= '테스트중';
+            msg_photo.message.photo.url= 'http://i.imgur.com/VyzToYw.jpg';
+            msg_photo.message.message_button.label= '맥북 쿠폰받기';
+            msg_photo.message.message_button.url= 'https://cheese10yun.github.io/';
+            
+            callback(null, msg_photo);
             break;
         case '':
             break;
         default:
-            message.bases.text = '입력이 제대로 입력해주세요';
-            callback(null, message.bases);
+            msg_base.base.text = '입력이 제대로 입력해주세요';
+            callback(null, msg_base);
             break;
     }
 };
