@@ -52,11 +52,9 @@ Bot.diet = (req, callback) => {
             }
         }
     ];
-    
     async.waterfall(tasks, (err, result) => {
         callback(err, result);
     });
-    
 };
 
 function GetDietMenu(req, callback) {

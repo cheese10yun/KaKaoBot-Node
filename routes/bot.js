@@ -3,12 +3,7 @@ const
     router = express.Router(),
     Bot = require('../service/BotService');
 
-
 require('../databases/redis')(router); // redis
-
-router.get('/', function (req, res) {
-    res.render('index', {title: 'Express'});
-});
 
 //TODO ""로 반드시 감싸야 하는지?
 router.get('/keyboard', (req, res) => {
@@ -45,8 +40,7 @@ router.post('/message', (req, res) => {
 });
 
 router.post('/friend', (req, res) => {
-    const
-        user_key = req.body.user_key;
+    const user_key = req.body.user_key;
     console.log(`${user_key}님이 쳇팅방에 참가했습니다.`);
     
     res.set({
@@ -55,8 +49,7 @@ router.post('/friend', (req, res) => {
 });
 
 router.delete('/friend', (req, res) => {
-    const
-        user_key = req.body.user_key;
+    const user_key = req.body.user_key;
     console.log(`${user_key}님이 쳇팅방을 차단했습니다.`);
     
     res.set({
@@ -66,13 +59,11 @@ router.delete('/friend', (req, res) => {
 
 router.delete('/chat_room/:user_key', (req, res) => {
     const user_key = req.params.user_key;
-    
     console.log(`${user_key}님이 쳇팅방에서 나갔습니다.`);
     
     res.set({
         'content-type': 'application/json'
     }).send(JSON.stringify({success:true}));
 });
-
 
 module.exports = router;
