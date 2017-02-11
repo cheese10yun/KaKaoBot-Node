@@ -5,7 +5,6 @@ const
     redis = require('redis'),
     db_info = require('../secret/secret');
 
-
 module.exports = (router) =>{
     
     global.client = redis.createClient(db_info.redis.port, db_info.redis.host);

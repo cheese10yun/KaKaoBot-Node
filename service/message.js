@@ -2,10 +2,9 @@
  * Created by cheese on 2017. 2. 10..
  */
 
-let
-    buttons =['교내식단', '메뉴2', '메뉴3'],
-    message = {};
+let message = {};
 
+message.buttons= ['교내식단', 'BTL식단', '메뉴3'];
 
 message.base = (text)=>{
     return {
@@ -14,7 +13,7 @@ message.base = (text)=>{
         },
         keyboard: {
             type: 'buttons',
-            buttons: buttons
+            buttons: message.buttons
         }
     }
 };
@@ -35,10 +34,9 @@ message.photo = (text, url_photo, label, url_button)=>{
         },
         keyboard: {
             type: 'buttons',
-            buttons: buttons
+            buttons: message.buttons
         }
     }
 };
-
 
 module.exports = message;
