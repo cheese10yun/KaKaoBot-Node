@@ -37,8 +37,7 @@ Bot.choseMenu = (req, content, callback) => {
             break;
         case '통근버스송정': //메뉴3
             // http://i.imgur.com/u9t9RYO.png
-            callback(null, message.base(getSongJeongSchedule()));
-            callback(null, message.photo('송정', 'http://i.imgur.com/71CHVU2.png'));
+            callback(null, message.photo(getSongJeongSchedule(), 'http://i.imgur.com/71CHVU2.png'));
             break;
         case '메뉴3': //메뉴3
             // callback(null, message.photo('테스트중', 'http://i.imgur.com/VyzToYw.jpg', '맥북 쿠폰받기', 'https://cheese10yun.github.io/'));
