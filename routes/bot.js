@@ -9,7 +9,7 @@ require('../databases/redis')(router); // redis
 router.get('/keyboard', (req, res) => {
     res.set({
         'content-type': 'application/json'
-    }).send(JSON.stringify(message.buttons()));
+    }).send(JSON.stringify(message.buttonsType()));
 });
 
 router.post('/message', (req, res) => {

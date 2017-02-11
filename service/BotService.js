@@ -25,28 +25,27 @@ const REDIS_KEYS = {
 Bot.choseMenu = (req, content, callback) => {
     
     switch (content) {
-        case '교내식단': //교내식단
+        case message.buttons[0]: //교내식단
             Bot.dietNormal(req, (err, result) => {
-                callback(err, message.base(result));
+                callback(err, message.baseType(result));
             });
             break;
-        case 'BTL식단': //BTL식단
+        case message.buttons[1]: //BTL식단
             Bot.dietBTL(req, (err, result)=>{
-                callback(err, message.base(result));
+                callback(err, message.baseType(result));
             });
             break;
-        case '하교광주권': //메뉴3
-            // http://i.imgur.com/u9t9RYO.png
-            callback(null, message.message_button(getSongJeongSchedule(), '링크를 클릭하시면 시간표가 보입니다.', 'http://i.imgur.com/71CHVU2.png'));
+        case message.buttons[2]: //하교 광주
+            callback(null, message.messageButtonType(getSongJeongSchedule(), '링크를 클릭하시면 시간표가 보입니다.', 'http://i.imgur.com/71CHVU2.png'));
             break;
-        case '하교목포권': //메뉴3
-            callback(null, message.message_button('하교[목포권 노선 23편(학교버스 5편/도서관 차량 포함), 일로권 1편 운행]', '링크를 클릭하시면 시간표가 보입니다.', 'http://i.imgur.com/QU66mjA.png'));
+        case message.buttons[3]: //하교 목포
+            callback(null, message.messageButtonType('하교[목포권 노선 23편(학교버스 5편/도서관 차량 포함), 일로권 1편 운행]', '링크를 클릭하시면 시간표가 보입니다.', 'http://i.imgur.com/QU66mjA.png'));
             break;
-        case '기능추가요청': //메뉴3
-            callback(null, message.message_button('버그 및 추가기능 요청', '링크를 클릭해서 등록해주세요.', 'https://github.com/cheese10yun/Node-Boot/issues'));
+        case message.buttons[4]: //기능추가요청
+            callback(null, message.messageButtonType('버그 및 추가기능 요청', '링크를 클릭해서 등록해주세요.', 'https://github.com/cheese10yun/Node-Boot/issues'));
             break;
         default:
-            callback(null, message.base(getSongJeongSchedule()));
+            callback(null, message.baseType(getSongJeongSchedule()));
             break;
     }
 };

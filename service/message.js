@@ -4,28 +4,28 @@
 
 let message = {};
 
-const buttons = ['교내식단', 'BTL식단', '하교광주권', '하교목포권', '기능추가요청 '];
+message.buttons = ['교내식단', 'BTL식단', '하교광주권', '하교목포권', '기능추가요청'];
 
-message.buttons = () => {
+message.buttonsType = () => {
     return {
         type: 'buttons',
-        buttons: buttons
+        buttons: message.buttons
     }
 };
 
-message.base = (text) => {
+message.baseType = (text) => {
     return {
         message: {
             text: text,
         },
         keyboard: {
             type: 'buttons',
-            buttons: buttons
+            buttons: message.buttons
         }
     }
 };
 
-message.photo = (text, url_photo, label, url_button) => {
+message.photoType = (text, url_photo, label, url_button) => {
     return {
         message: {
             text: text,
@@ -41,12 +41,12 @@ message.photo = (text, url_photo, label, url_button) => {
         },
         keyboard: {
             type: 'buttons',
-            buttons: buttons
+            buttons: message.buttons
         }
     }
 };
 
-message.message_button = (text, label, url_button) => {
+message.messageButtonType = (text, label, url_button) => {
     return {
         message: {
             text: text,
@@ -57,7 +57,7 @@ message.message_button = (text, label, url_button) => {
         },
         keyboard: {
             type: 'buttons',
-            buttons: buttons
+            buttons: message.buttons
         }
     }
 };
