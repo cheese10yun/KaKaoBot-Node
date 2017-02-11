@@ -43,7 +43,7 @@ Bot.choseMenu = (req, content, callback) => {
             callback(null, message.message_button('하교[목포권 노선 23편(학교버스 5편/도서관 차량 포함), 일로권 1편 운행]', '링크를 클릭하시면 시간표가 보입니다.', 'http://i.imgur.com/QU66mjA.png'));
             break;
         default:
-            callback(null, message.photo('테스트중', 'http://i.imgur.com/VyzToYw.jpg', '송정', 'http://i.imgur.com/71CHVU2.png'));
+            callback(null, message.base(getSongJeongSchedule()));
             break;
     }
 };
