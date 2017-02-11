@@ -4,7 +4,7 @@
 
 let message = {};
 
-const buttons= ['교내식단', 'BTL식단', '메뉴3'];
+const buttons= ['교내식단', 'BTL식단', '통근버스송정', '메뉴3'];
 
 message.buttons =()=>{
     return {
