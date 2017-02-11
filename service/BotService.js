@@ -42,6 +42,9 @@ Bot.choseMenu = (req, content, callback) => {
         case '하교목포권': //메뉴3
             callback(null, message.message_button('하교[목포권 노선 23편(학교버스 5편/도서관 차량 포함), 일로권 1편 운행]', '링크를 클릭하시면 시간표가 보입니다.', 'http://i.imgur.com/QU66mjA.png'));
             break;
+        case '기능추가요청': //메뉴3
+            callback(null, message.message_button('버그 및 추가기능 요청', '링크를 클릭해서 등록해주세요.', 'https://github.com/cheese10yun/Node-Boot/issues'));
+            break;
         default:
             callback(null, message.base(getSongJeongSchedule()));
             break;
