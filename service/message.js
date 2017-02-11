@@ -46,4 +46,20 @@ message.photo = (text, url_photo, label, url_button)=>{
     }
 };
 
+message.message_button = (text, label, url_button)=>{
+    return{
+        message: {
+            text: text,
+            message_button: {
+                label: label,
+                url: url_button,
+            }
+        },
+        keyboard: {
+            type: 'buttons',
+            buttons: buttons
+        }
+    }
+};
+
 module.exports = message;

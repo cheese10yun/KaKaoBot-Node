@@ -41,10 +41,10 @@ Bot.choseMenu = (req, content, callback) => {
             callback(null, message.base(getSongJeongSchedule()));
             break;
         case '메뉴3': //메뉴3
-            callback(null, message.photo('테스트중', 'http://i.imgur.com/VyzToYw.jpg', '송정', 'http://i.imgur.com/71CHVU2.png'));
+            callback(null, message.message_button('', '링크를 클릭하세요', 'http://i.imgur.com/71CHVU2.png'));
             break;
         default:
-            callback(null, message.base('입력값이 올바르지 않습니다.'));
+            callback(null, message.photo('테스트중', 'http://i.imgur.com/VyzToYw.jpg', '송정', 'http://i.imgur.com/71CHVU2.png'));
             break;
     }
 };
