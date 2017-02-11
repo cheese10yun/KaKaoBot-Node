@@ -34,10 +34,10 @@ message.photo = (text, url_photo, label, url_button)=>{
                 width: 640,
                 height: 480
             },
-            // message_button: {
-            //     label: label,
-            //     url: url_button,
-            // }
+            message_button: {
+                label: label,
+                url: url_button,
+            }
         },
         keyboard: {
             type: 'buttons',

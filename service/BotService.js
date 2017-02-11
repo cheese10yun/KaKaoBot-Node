@@ -37,11 +37,11 @@ Bot.choseMenu = (req, content, callback) => {
             break;
         case '통근버스송정': //메뉴3
             // http://i.imgur.com/u9t9RYO.png
-            callback(null, message.photo(getSongJeongSchedule(), 'http://i.imgur.com/71CHVU2.png'));
+            // callback(null, message.photo(getSongJeongSchedule(), 'http://i.imgur.com/71CHVU2.png'));
+            callback(null, message.base(getSongJeongSchedule()));
             break;
         case '메뉴3': //메뉴3
-            // callback(null, message.photo('테스트중', 'http://i.imgur.com/VyzToYw.jpg', '맥북 쿠폰받기', 'https://cheese10yun.github.io/'));
-            callback(null, message.photo('테스트중', 'http://i.imgur.com/VyzToYw.jpg'));
+            callback(null, message.photo('테스트중', 'http://i.imgur.com/VyzToYw.jpg', '송정', 'http://i.imgur.com/71CHVU2.png'));
             break;
         default:
             callback(null, message.base('입력값이 올바르지 않습니다.'));
@@ -114,7 +114,7 @@ function getDietNormalMenu(req, callback) {
                 diet += $(this).find("td").eq(2).text();
             });
             RedisDAO.setByKey(req.cache, REDIS_KEYS.diet_normal, JSON.stringify(diet), (err, result) => {
-                callback(null, diet);
+                callback(err, diet);
             });
         } else {
             callback(err, null);
@@ -151,14 +151,14 @@ function getDietBTLMenu(req, callback) {
 function getSongJeongSchedule() {
     let schedule ;
     
-    schedule = '출발시간 | 차량편수 | 탑승홈 | 운행노선\r\n';
-    schedule +='(1) | 16:00  | 1 | 1번홈 송정역\r\n';
-    schedule +='(2) | 17:30  | 1 | 1번홈 송정역 ⇒ 송정동파출소 ⇒ 호남대 ⇒ 추선회관\r\n';
-    schedule +='(3)(4) | 18:20 | 2 | 1, 2 | 번홈 송정역 ⇒ 송정동파출소 ⇒ 세정아울렛건너편 ⇒ 호남대 ⇒ 추선회관 ⇒ 상록회관\r\n';
-    schedule +='(5)(6) |  18:10 | 1 | 1 | 5번홈 6번홈 남부대학교 ⇒ 첨단서라A 신가주공5단지 ⇒ 신가주공1단지 ⇒ 신가사거리 ⇒ 신창동우체국\r\n';
-    schedule +='(7) | 18:20 | 1 | 3번홈  | 월곡동부영A ⇒ 어등산약국 ⇒ 농수산물유통센터 ⇒ 현진에버빌A  ⇒ 수완2차우미린A노선 추가\r\n';
-    schedule +='(8) | 18:10 | 1 | 7번홈  |서광주우체국 ⇒ 염주체육관 ⇒ 금호지구중흥A\r\n';
-    schedule +='(9) | 20:00 | 1 | 1번홈  |송정역 ⇒ 송정동파출소 ⇒ 호남대 ⇒ 추선회관\r\n';
+    schedule = '출발시간  |  운행노선\r\n';
+    schedule +='(1) | 16:00  |  송정역\r\n';
+    schedule +='(2) | 17:30  |  송정역 ⇒ 송정동파출소 ⇒ 호남대 ⇒ 추선회관\r\n';
+    schedule +='(3)(4) | 18:20  |  송정역 ⇒ 송정동파출소 ⇒ 세정아울렛건너편 ⇒ 호남대 ⇒ 추선회관 ⇒ 상록회관\r\n';
+    schedule +='(5)(6) |  18:10 |   남부대학교 ⇒ 첨단서라A 신가주공5단지 ⇒ 신가주공1단지 ⇒ 신가사거리 ⇒ 신창동우체국\r\n';
+    schedule +='(7) | 18:20  |  월곡동부영A ⇒ 어등산약국 ⇒ 농수산물유통센터 ⇒ 현진에버빌A  ⇒ 수완2차우미린A노선 추가\r\n';
+    schedule +='(8) | 18:10  |  서광주우체국 ⇒ 염주체육관 ⇒ 금호지구중흥A\r\n';
+    schedule +='(9) | 20:00  |  송정역 ⇒ 송정동파출소 ⇒ 호남대 ⇒ 추선회관\r\n';
     
     return schedule;
 }
