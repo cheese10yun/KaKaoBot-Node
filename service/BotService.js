@@ -25,17 +25,17 @@ const REDIS_KEYS = {
 Bot.choseMenu = (req, content, callback) => {
     
     switch (content) {
-        case message.buttons[0]: //교내식단
+        case '교내식단': //교내식단
             Bot.dietNormal(req, (err, result) => {
                 callback(err, message.base(result));
             });
             break;
-        case message.buttons[1]: //BTL식단
+        case 'BTL식단': //BTL식단
             Bot.dietBTL(req, (err, result)=>{
                 callback(err, message.base(result));
             });
             break;
-        case message.buttons[2]: //메뉴3
+        case '메뉴3': //메뉴3
             callback(null, message.photo('테스트중', 'http://i.imgur.com/VyzToYw.jpg', '맥북 쿠폰받기', 'https://cheese10yun.github.io/'));
             break;
         default:
