@@ -18,7 +18,7 @@ const URL = {
 
 const REDIS_KEYS = {
     diet_normal: 'BOT:DIET:NORMAL',
-    diet_BTL: 'BOT:DIET:BTL',
+    diet_BTL: 'BOT:DIET:BTL'
 };
 
 // TODO 리턴 메시지들은 관리할것인가 아래 처럼 ? 아니면 별도로 구성 ??
@@ -36,10 +36,13 @@ Bot.choseMenu = (req, content, callback) => {
             });
             break;
         case '통근버스송정': //메뉴3
+            // http://i.imgur.com/u9t9RYO.png
             callback(null, message.base(getSongJeongSchedule()));
+            callback(null, message.photo('송정', 'http://i.imgur.com/71CHVU2.png'));
             break;
         case '메뉴3': //메뉴3
-            callback(null, message.photo('테스트중', 'http://i.imgur.com/VyzToYw.jpg', '맥북 쿠폰받기', 'https://cheese10yun.github.io/'));
+            // callback(null, message.photo('테스트중', 'http://i.imgur.com/VyzToYw.jpg', '맥북 쿠폰받기', 'https://cheese10yun.github.io/'));
+            callback(null, message.photo('테스트중', 'http://i.imgur.com/VyzToYw.jpg'));
             break;
         default:
             callback(null, message.base('입력값이 올바르지 않습니다.'));
