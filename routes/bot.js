@@ -1,20 +1,15 @@
 const
     express = require('express'),
     router = express.Router(),
-    message = require('../service/message');
+    message = require('../service/message'),
     Bot = require('../service/BotService');
 
 require('../databases/redis')(router); // redis
 
 router.get('/keyboard', (req, res) => {
-    const menu = {
-        type: 'buttons',
-        buttons: message.buttons
-    };
-    
     res.set({
         'content-type': 'application/json'
-    }).send(JSON.stringify(menu));
+    }).send(JSON.stringify(message.buttons()));
 });
 
 router.post('/message', (req, res) => {

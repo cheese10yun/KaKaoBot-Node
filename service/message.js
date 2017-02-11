@@ -4,7 +4,14 @@
 
 let message = {};
 
-message.buttons= ['교내식단', 'BTL식단', '메뉴3'];
+const buttons= ['교내식단', 'BTL식단', '메뉴3'];
+
+message.buttons =()=>{
+    return {
+        type: 'buttons',
+        buttons: buttons
+    }
+};
 
 message.base = (text)=>{
     return {
@@ -13,7 +20,7 @@ message.base = (text)=>{
         },
         keyboard: {
             type: 'buttons',
-            buttons: message.buttons
+            buttons: buttons
         }
     }
 };
@@ -34,7 +41,7 @@ message.photo = (text, url_photo, label, url_button)=>{
         },
         keyboard: {
             type: 'buttons',
-            buttons: message.buttons
+            buttons: buttons
         }
     }
 };
