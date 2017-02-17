@@ -12,8 +12,8 @@ module.exports = (function () {
       user_key: ''//특정 카카오톡 이용자를 구분하기 위한 key 입니다. 카오톡 이용자를 구분하기 위해서는 카카오로부터 API를 통해 user_key를 response로 받아야 합니다.
     },
     redis: {
-      host: '',
-      port: ''
+      host: '127.0.0.1',
+      port: '6379'
     }
   }
 }());
