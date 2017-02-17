@@ -7,6 +7,7 @@ const RedisDAO = require('../service/RedisDAO');
 const request = require('request');
 const cheerio = require('cheerio');
 const Scheduler = {};
+
 const URL = {
   diet_normal: 'http://dormi.mokpo.ac.kr/www/bbs/board.php?bo_table=food',
   diet_BTL: 'http://dormi.mokpo.ac.kr/www/bbs/board.php?bo_table=food_btl'
