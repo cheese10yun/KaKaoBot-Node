@@ -26,8 +26,7 @@
 ## 기술스펙
 * Node.JS
 * Redis
-* Node Cron
-
+* Node Cron [link](https://github.com/merencia/node-cron)
 
 ## 프로젝트 실행 방법 (Mac 기준)
 ### Redis 설치 및 실행

@@ -34,7 +34,7 @@ Bot.choseMenu = (req, content, callback) => {
       callback(null, message.messageButtonType('버그 및 추가기능 요청', '링크를 클릭해서 등록해주세요.', 'https://github.com/cheese10yun/Node-Boot/issues'));
       break;
     default:
-      callback(null, message.baseType(getSongJeongSchedule()));
+      callback(null, message.baseType('올바른 입력값이 아닙니다.'));
       break;
   }
 };
