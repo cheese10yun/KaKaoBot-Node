@@ -14,7 +14,7 @@ const URL = {
 };
 
 // let task = cron.schedule('*/3 * * * *', ()=> {
-Scheduler.test =()=> {
+Scheduler.test = function () {
   const tasks = [
     (callback) => {
       RedisDAO.deleteByKeyPattern(client, RedisDAO.keys_pattern, (err) => {
