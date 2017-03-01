@@ -28,8 +28,8 @@ let task = cron.schedule('45 0 * * *', ()=> {
         if (!err && res.statusCode === 200) {
           let $ = cheerio.load(html);
           let diet = null;
-
-          $('.tbline31 tr').each(() => {
+  
+          $('.tbline31 tr').each(function () {
             diet = '기존식단\r\n';
             diet += '----------아침---------\r\n';
             diet += $(this).find("td").eq(0).text() + '\r\n';
@@ -56,8 +56,8 @@ let task = cron.schedule('45 0 * * *', ()=> {
         if (!err && res.statusCode === 200) {
           let $ = cheerio.load(html);
           let diet = null;
-
-          $('.tbline31 tr').each(() => {
+  
+          $('.tbline31 tr').each(function () {
             diet = '기존식단\r\n';
             diet += '----------아침---------\r\n';
             diet += $(this).find("td").eq(0).text() + '\r\n';
