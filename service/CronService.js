@@ -13,7 +13,7 @@ const URL = {
   diet_BTL: 'http://dormi.mokpo.ac.kr/www/bbs/board.php?bo_table=food_btl'
 };
 
-let task = cron.schedule('0 1 * * *', ()=> {
+let task = cron.schedule('45 0 * * *', ()=> {
   const tasks = [
     (callback) => {
       RedisDAO.deleteByKeyPattern(client, RedisDAO.keys_pattern, (err) => {
@@ -57,7 +57,7 @@ let task = cron.schedule('0 1 * * *', ()=> {
           let diet = null;
   
           $('.tbline31 tr').each(function () {
-            diet = '기존식단\r\n';
+            diet = 'BTL 식단\r\n';
             diet += '----------아침---------\r\n';
             diet += $(this).find("td").eq(0).text() + '\r\n';
             diet += '----------점심---------\r\n';
