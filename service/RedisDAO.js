@@ -1,7 +1,7 @@
 const RedisDAO = {};
 
-RedisDAO.key_diet_BTL = 'BOT:DIET:NORMAL';
-RedisDAO.key_diet_normal = 'BOT:DIET:BTL';
+RedisDAO.key_diet_normal = 'BOT:DIET:NORMAL';
+RedisDAO.key_diet_BTL = 'BOT:DIET:BTL';
 RedisDAO.keys_pattern = 'BOT:DIET:*';
 
 RedisDAO.getByKey = (reqCache, key, callback) => {
