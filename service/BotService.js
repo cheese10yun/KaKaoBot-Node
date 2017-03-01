@@ -17,10 +17,10 @@ Bot.choseMenu = (req, content, callback) => {
   switch (content) {
     case message.buttons[0]: //교내식단
       test.test();
-        // callback(null, message.baseType('asdasd'));
-      RedisDAO.getByKey(req.cache, RedisDAO.key_diet_normal, (err, result) => {
-        callback(err, message.baseType(JSON.parse(result)));
-      });
+        callback(null, message.baseType('asdasd'));
+      // RedisDAO.getByKey(req.cache, RedisDAO.key_diet_normal, (err, result) => {
+      //   callback(err, message.baseType(JSON.parse(result)));
+      // });
       break;
     case message.buttons[1]: //BTL식단
       RedisDAO.getByKey(req.cache, RedisDAO.key_diet_BTL, (err, result) => {
