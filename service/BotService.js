@@ -8,6 +8,7 @@ const
   async = require('async'),
   RedisDAO = require('../service/RedisDAO'),
   message = require('../service/message'),
+  test = require('../service/CronService'),
   Bot={};
 
 
@@ -15,6 +16,8 @@ Bot.choseMenu = (req, content, callback) => {
   
   switch (content) {
     case message.buttons[0]: //교내식단
+      test.test();
+        // callback(null, message.baseType('asdasd'));
       RedisDAO.getByKey(req.cache, RedisDAO.key_diet_normal, (err, result) => {
         callback(err, message.baseType(JSON.parse(result)));
       });
