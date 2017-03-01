@@ -70,7 +70,6 @@ let task = cron.schedule('* * * * *', ()=> {
         }
       });
     },
-
     (diet, callback) =>{
       RedisDAO.setByKey(client, RedisDAO.key_diet_BTL, JSON.stringify(diet), (err) => {
         callback(err, diet);
