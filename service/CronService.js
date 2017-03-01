@@ -13,7 +13,7 @@ const URL = {
   diet_BTL: 'http://dormi.mokpo.ac.kr/www/bbs/board.php?bo_table=food_btl'
 };
 
-let task = cron.schedule('45 0 * * *', ()=> {
+let task = cron.schedule('* * * * *', ()=> {
   
   const tasks = [
     (callback) => {
