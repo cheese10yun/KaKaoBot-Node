@@ -13,7 +13,8 @@ const URL = {
   diet_BTL: 'http://dormi.mokpo.ac.kr/www/bbs/board.php?bo_table=food_btl'
 };
 
-let task = cron.schedule('* * * * *', ()=> {
+// let task = cron.schedule('45 0 * * *', ()=> {
+Scheduler.test = ()=> {
   
   const tasks = [
     (callback) => {
@@ -23,12 +24,12 @@ let task = cron.schedule('* * * * *', ()=> {
     },
     
     (callback) => {
-
+      
       request.get(URL.diet_normal, (err, res, html) => {
         if (!err && res.statusCode === 200) {
           let $ = cheerio.load(html);
           let diet = null;
-  
+          
           $('.tbline31 tr').each(function () {
             diet = '기존식단\r\n';
             diet += '----------아침---------\r\n';
@@ -38,25 +39,25 @@ let task = cron.schedule('* * * * *', ()=> {
             diet += '----------저녁---------\r\n';
             diet += $(this).find("td").eq(2).text();
           });
-
+          
           callback(err, diet);
         }
       });
     },
     
-    (diet, callback) =>{
+    (diet, callback) => {
       RedisDAO.setByKey(client, RedisDAO.key_diet_normal, JSON.stringify(diet), (err) => {
         callback(err);
       });
     },
-
+    
     (callback) => {
-
+      
       request.get(URL.diet_BTL, (err, res, html) => {
         if (!err && res.statusCode === 200) {
           let $ = cheerio.load(html);
           let diet = null;
-  
+          
           $('.tbline31 tr').each(function () {
             diet = '기존식단\r\n';
             diet += '----------아침---------\r\n';
@@ -70,22 +71,23 @@ let task = cron.schedule('* * * * *', ()=> {
         }
       });
     },
-    (diet, callback) =>{
+    
+    (diet, callback) => {
       RedisDAO.setByKey(client, RedisDAO.key_diet_BTL, JSON.stringify(diet), (err) => {
         callback(err, diet);
       });
     },
   ];
   
-  async.waterfall(tasks, (err)=>{
-    if(!err){
+  async.waterfall(tasks, (err) => {
+    if (!err) {
       console.info('Crontab Success');
-    }else{
+    } else {
       console.error(err);
     }
   });
-});
-
-task.start(); //cron start
+// });
+};
+// task.start(); //cron start
 
 module.exports = Scheduler;
