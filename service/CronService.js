@@ -13,8 +13,7 @@ const URL = {
   diet_BTL: 'http://dormi.mokpo.ac.kr/www/bbs/board.php?bo_table=food_btl'
 };
 
-// let task = cron.schedule('*/3 * * * *', ()=> {
-Scheduler.test = function () {
+let task = cron.schedule('0 1 * * *', ()=> {
   const tasks = [
     (callback) => {
       RedisDAO.deleteByKeyPattern(client, RedisDAO.keys_pattern, (err) => {
@@ -85,9 +84,8 @@ Scheduler.test = function () {
       console.error(err);
     }
   });
-// });
-};
+});
 
-// task.start(); //cron start
+task.start(); //cron start
 
 module.exports = Scheduler;
