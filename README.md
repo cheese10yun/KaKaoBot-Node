@@ -4,6 +4,8 @@
 * [옐로우 아이디 설정](https://github.com/cheese10yun/Node-Boot/wiki/%EC%98%90%EB%A1%9C%EC%9A%B0-%EC%95%84%EC%9D%B4%EB%94%94-%EC%84%A4%EC%A0%95)
 * [카카오 봇 API 간단설명](https://github.com/cheese10yun/Node-Boot/wiki/%EC%B9%B4%EC%B9%B4%EC%98%A4-%EB%B4%87-API-%EA%B0%84%EB%8B%A8%EC%84%A4%EB%AA%85)
 
+## 옐로우 아이디 친구 추가
+ * [https://plus.kakao.com/home/@node_yun](https://plus.kakao.com/home/@node_yun) 클릭 친구 추가 
 
 ## 기능
 
