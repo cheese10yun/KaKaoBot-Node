@@ -1,3 +1,4 @@
+[![HitCount](http://hits.dwyl.io/cheese10yun/KaKaoBot-Node.svg)](http://hits.dwyl.io/cheese10yun/KaKaoBot-Node)
 # 카카오 봇
 ## 개발 위키 참고
 * [Node API 설정](https://github.com/cheese10yun/Node-Boot/wiki/Node-API-%EC%84%A4%EC%A0%95)
